@@ -1,0 +1,77 @@
+[samples]
+    dir = /Users/junipe/Workspace/research/nick/tickets/
+    single = /Users/junipe/Workspace/research/nick/tickets/result.json
+
+[pynlpir]
+
+    user_dict = /Users/junipe/Workspace/research/nick/model_building/user_dict/sample.txt
+
+
+[stanford_corenlp]
+
+    prefix = /Users/junipe/
+
+    [[segmenter]]
+        path_to_jar = stanford-segmenter/stanford-segmenter.jar
+        path_to_sihan_corpora_dict = stanford-segmenter/data
+        path_to_model = stanford-segmenter/data/pku.gz
+        path_to_dict = stanford-segmenter/data/dict-chris6.ser.gz
+        path_to_slf4j = stanford-segmenter/slf4j-api.jar
+        encoding = UTF-8
+
+    [[tokenizer]]
+        path_to_jar = stanford-postagger/stanford-postagger.jar
+
+    [[postagger]]
+        tagger_zh = stanford-postagger/models/chinese-distsim.tagger
+        tagger_en = stanford-postagger/models/english-bidirectional-distsim.tagger
+        path_to_jar = stanford-postagger/stanford-postagger.jar
+
+[stopwords]
+    prefix = /Users/junipe/Workspace/research/nick/
+    general = preprocessing/dictionaries/stopwords-all.json
+    custom = preprocessing/dictionaries/stopwords-custom.csv
+
+[io]
+    prefix = /Users/junipe/Workspace/research/nick/
+    output_data_directory  = output/
+
+[embedding]
+    prefix = /Users/junipe/Workspace/research/nick/
+    input_data_directory = input_data_dir/
+    output_data_directory = output/
+
+    [[tfidf]]
+        token_source = output/test.keywords
+        num_to_train = 10000
+        model_save_to = model_building/models/tfidf-model
+        dict_save_to = model_building/models/tfidf-dict
+        corpus_save_to = model_building/models/tfidf-corpus
+        sim_index_save_to =  model_building/models/tfidf-index
+
+    [[lda]]
+        token_source = output/test.keywords
+        num_to_train = 10000
+        model_save_to = model_building/models/lda-model
+        dict_save_to = model_building/models/lda-dict
+        corpus_save_to = model_building/models/lda-corpus
+        sim_index_save_to =  model_building/models/lda-index
+
+[clustering]
+
+    output_data_directory = data_document_scores
+    range_n_clusters_min = 2
+    range_n_clusters_max = 6
+
+[similarity]
+    prefix = /Users/junipe/Workspace/research/nick/
+    dictionary = model_building/models/tfidf-dict.dict
+    corpus = model_building/models/tfidf-corpus.mm
+
+[predict_label]
+
+    prefix = /Users/junipe/Workspace/research/nick/
+    model_dir = prediction/models/
+
+[experiment]
+    token_indexes = output/

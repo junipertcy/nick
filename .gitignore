@@ -1,0 +1,83 @@
+# Generated files
+model_building/models/*
+outputs/*
+*.keywords
+
+tickets/*
+
+# TextGrocery generated files
+test/*
+new_test/*
+sample/*
+
+# configuration files
+config.ini
+
+# Temp UNIX files
+*~
+\#*\#
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+bin/
+include/
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+stanford-postagger/
+stanford-segmenter/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+pip-selfcheck.json
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# outputs
+nick/output/*
+nick/model_building/models/*
+
+.idea/

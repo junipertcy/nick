@@ -1,0 +1,9 @@
+configobj==5.0.6
+gensim==0.13.3
+imbalanced-learn==0.1.8
+nltk==3.2.1
+pynlpir==0.4.6
+numpy==1.12.0
+scipy==0.18.1
+pyrocksdb==0.4
+regex==2017.01.17
